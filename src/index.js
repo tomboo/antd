@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { DatePicker, message } from 'antd';
+import { DatePicker, message, Alert } from 'antd';
 import 'antd/dist/antd.css';
 import './index.css';
 
@@ -20,7 +20,7 @@ class App extends React.Component {
       <div style={{ width: 400, margin: '100px auto' }}>
         <DatePicker onChange={this.handleChange} />
         <div style={{ marginTop: 20 }}>
-          Selected Date: {date ? date.format('YYYY-MM-DD') : 'None'}
+          <Alert message={`Selected Date: ${date ? date.format('YYYY-MM-DD') : 'None'}`} type="success" />
         </div>
       </div>
     );
